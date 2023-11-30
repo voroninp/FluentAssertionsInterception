@@ -34,6 +34,9 @@ file static class GeneratedInterceptor
 
     [InterceptsLocationAttribute(@"C:\Users\pavel\source\repos\voroninp\FluentAssertionsInterception\FluentAssertionsInterception\Program.cs", line: 14, character: 21)]
     internal static Func<T> Method<T>(this T result)
-        =>
-        Calls.Call1 as Func<T>;
+    {
+        var call = Calls.Call1 as Func<T>;
+        Calls.Call1 = null!;
+        return call;
+    }
 }
