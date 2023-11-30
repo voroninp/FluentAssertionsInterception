@@ -5,7 +5,7 @@ using FluentAssertions;
 await new Foo().AsyncBar().Method().Should().ThrowAsync<ArgumentNullException>();
 
 // this fails because it's not async method
-// await new Foo().Bar().AsyncResult().Should().ThrowAsync<ArgumentNullException>();
+// await new Foo().Bar().Method().Should().ThrowAsync<ArgumentNullException>();
 
 // but this does not because of the interceptor
 await new Foo().Bar().Method().Should().ThrowAsync<ArgumentNullException>();
