@@ -4,7 +4,7 @@ using FluentAssertions;
 
 await new Foo().AsyncBar().Method().Should().ThrowAsync<ArgumentNullException>();
 
-// this call fails because it's not async method
+// this call fails because it's not async method and it's not intercepted
 // await new Foo().Bar().Method().Should().ThrowAsync<ArgumentNullException>();
 
 // but this call does not because it is intercepted ;-)
