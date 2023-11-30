@@ -4,10 +4,10 @@ using FluentAssertions;
 
 await new Foo().AsyncBar().Method().Should().ThrowAsync<ArgumentNullException>();
 
-// this fails because it's not async method
+// this call fails because it's not async method
 // await new Foo().Bar().Method().Should().ThrowAsync<ArgumentNullException>();
 
-// but this does not because of the interceptor
+// but this call does not because it is intercepted ;-)
 await new Foo().Bar().Method().Should().ThrowAsync<ArgumentNullException>();
 
 // this one is a bit more complex, it requires two interceptions and a class to store the lambda.
